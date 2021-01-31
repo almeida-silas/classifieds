@@ -1,7 +1,31 @@
-import React from 'react'
-import { FiPlusCircle } from 'react-icons/fi'
+import React, { useEffect } from 'react'
 
-const Home: React.FC = () => {
+import { connect } from 'react-redux'
+import { bindActionCreators, Dispatch } from 'redux'
+
+import { ApplicationState } from '../../store'
+import * as ClassifiedsActions from '../../store/ducks/classifieds/actions'
+
+import { FiPlusCircle } from 'react-icons/fi'
+import { Classifieds } from '../../store/ducks/classifieds/types'
+
+interface StateProps {
+  classifieds: Classifieds[]
+}
+
+interface DispatchProps {
+  loadRequest(): void
+}
+
+type Props = StateProps & DispatchProps
+
+const Home: React.FC<Props> = (props: Props) => {
+  const { loadRequest } = props
+
+  useEffect(() => {
+    loadRequest()
+  }, [loadRequest])
+
   return (
     <div>
       <div>
@@ -24,4 +48,13 @@ const Home: React.FC = () => {
   )
 }
 
-export default Home
+const mapStateToProps = (state: ApplicationState) => ({
+  classifieds: state.classifieds.data,
+  loading: state.classifieds.loading,
+  error: state.classifieds.error
+})
+
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators(ClassifiedsActions, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
