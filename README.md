@@ -18,9 +18,10 @@
 ## About The Project
 
 This repository was made to test my knowledge.
+
 The project is a modern solution for classifieds.
 
-There is a README within each folder `frontend` and` backend`, specifying technologies and methods of use
+There is a README within each folder `frontend` and `backend`, specifying technologies and methods of use
 
 <hr />
 
