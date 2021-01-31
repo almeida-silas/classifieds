@@ -1,15 +1,10 @@
-import { action } from 'typesafe-actions'
+import { action, Action } from 'typesafe-actions'
 
 import { Classifieds, ClassifiedsTypes } from './types'
 
-export const loadRequest = (): void => {
-  action(ClassifiedsTypes.LOAD_REQUEST)
-}
+export const loadRequest = (): Action => action(ClassifiedsTypes.LOAD_REQUEST)
 
-export const loadSuccess = (data: Classifieds[]): void => {
+export const loadSuccess = (data: Classifieds[]): Action =>
   action(ClassifiedsTypes.LOAD_SUCCESS, data)
-}
 
-export const loadFailure = (): void => {
-  action(ClassifiedsTypes.LOAD_FAILURE)
-}
+export const loadFailure = (): Action => action(ClassifiedsTypes.LOAD_FAILURE)
