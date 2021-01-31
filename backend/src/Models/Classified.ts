@@ -11,6 +11,6 @@ export default class Classified {
   @Column()
   description: string
 
-  @Column({ type: 'timestamptz', default: () => `LOCALTIMESTAMP  AT TIME ZONE '${-3}'` })
-  date: string
+  @Column({ type: 'timestamptz', default: () => `NOW()` })
+  date: Date
 }
