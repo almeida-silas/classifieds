@@ -25,13 +25,6 @@ There is a README within each folder `frontend` and `backend`, specifying techno
 
 <hr />
 
-## Features
-This app features all the latest tools and practices in mobile development!
-
-## Getting started
-
-1. clone this repo using `git clone https://github.com/s1lasjee/classifieds.git`
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
